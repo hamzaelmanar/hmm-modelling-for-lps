@@ -15,7 +15,7 @@ Ce comportement de marché n'est **pas directement observable**. Je postule qu'i
 
 J'observe cependant un vecteur de variables de marché à chaque pas horaire $t$ :
 
-$$\mathbf{X}_t = \big[ \text{log\_rendement}_t,\; \text{nombre\_trades}_t,\; \text{frais\_totaux\_usd}_t,\; \text{vol\_réalisée}_t \big]^T.$$
+$$\mathbf{X}_t = \big[ \text{log_rendement}_t,\; \text{nombre_trades}_t,\; \text{frais_totaux_usd}_t,\; \text{vol_réalisée}_t \big]^T.$$
 
 Mon objectif est d'inférer la séquence de régimes cachés la plus probable $Z_{1:T}$ étant donné la séquence observée $\mathbf{X}_{1:T}$.
 
@@ -52,7 +52,7 @@ $$P(Z_{1:T}, \mathbf{X}_{1:T}) = P(Z_1) \prod_{t=2}^{T} P(Z_t \mid Z_{t-1}) \pro
 
 Pour rendre le modèle tractable, je suppose que la distribution d'émission pour chaque état est une loi normale multivariée à covariance diagonale :
 
-$$\mathbf{X}_t \mid Z_t = k \;\sim\; \mathcal{N}(\boldsymbol{\mu}_k,\; \boldsymbol{\Sigma}_k), \qquad \boldsymbol{\Sigma}_k = \operatorname{diag}(\sigma_{k,1}^2,\dots,\sigma_{k,d}^2).$$
+$$\mathbf{X}_t \mid Z_t = k \;\sim\; \mathcal{N}(\boldsymbol{\mu}_k,\; \boldsymbol{\Sigma}_k), \qquad \boldsymbol{\Sigma}_k = \mathrm{diag}(\sigma_{k,1}^2,\dots,\sigma_{k,d}^2).$$
 
 ### 3.1 Estimation des paramètres (étape M)
 Sous cette hypothèse gaussienne, les estimateurs du maximum de vraisemblance des paramètres, étant données les probabilités d'état postérieures $\gamma_t(k) = P(Z_t = k \mid \mathbf{X}_{1:T})$, sont :
@@ -78,7 +78,7 @@ Avant de faire confiance aux inférences du modèle, il convient de vérifier se
 | :--- | :--- | :--- |
 | **Stationnarité** | Matrice de transition $\mathbf{A}$ constante dans le temps | Tests ADF et KPSS |
 | **Émissions Gaussiennes** | Vraisemblance et BIC bien spécifiés | Test de Jarque–Bera, graphiques Q-Q |
-| **Indépendance Conditionnelle** | Covariance diagonale $\boldsymbol{\Sigma}_k = \operatorname{diag}(\dots)$ | Test de sphéricité de Bartlett |
+| **Indépendance Conditionnelle** | Covariance diagonale $\boldsymbol{\Sigma}_k = \mathrm{diag}(\dots)$ | Test de sphéricité de Bartlett |
 | **Propriété de Markov du 1er ordre** | $Z_t \perp Z_{t-2} \mid Z_{t-1}$ | Test du rapport de vraisemblance de Billingsley |
 
 > 📓 L'ensemble de ces tests statistiques est détaillé et exécuté dans [`notebooks/00_stats.ipynb`](notebooks/00_stats.ipynb).
