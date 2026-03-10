@@ -15,7 +15,7 @@ Ce comportement de marché n'est **pas directement observable**. Je postule qu'i
 
 J'observe cependant un vecteur de variables de marché à chaque pas horaire $t$ :
 
-$$\mathbf{X}_t = \big[ \text{log_rendement}_t,\; \text{nombre_trades}_t,\; \text{frais_totaux_usd}_t,\; \text{vol_réalisée}_t \big]^T.$$
+$$\mathbf{X}_t = \big[ \text{log-rendement}_t,\; \text{nombre-trades}_t,\; \text{frais-totaux-usd}_t,\; \text{vol-réalisée}_t \big]^T.$$
 
 Mon objectif est d'inférer la séquence de régimes cachés la plus probable $Z_{1:T}$ étant donné la séquence observée $\mathbf{X}_{1:T}$.
 
