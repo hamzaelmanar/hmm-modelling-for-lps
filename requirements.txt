@@ -1,0 +1,21 @@
+# Data handling
+pandas==3.0.1
+numpy==2.4.2
+pyarrow==23.0.1
+
+# Visualisation
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# Statistics & modelling
+scipy==1.17.1
+statsmodels==0.14.6
+hmmlearn==0.3.3
+scikit-learn==1.8.0
+
+# Notebooks
+ipykernel==7.2.0
+
+# Data extraction
+hypersync
+python-dotenv

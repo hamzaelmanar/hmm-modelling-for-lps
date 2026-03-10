@@ -1,0 +1,25 @@
+# --- Secrets ---
+.env
+
+# --- Raw blockchain data (reproducible via extract.py) ---
+usdc_weth_pool.parquet/
+
+# --- Generated pipeline artifacts (reproducible by running notebooks) ---
+data/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Dev scratch files ---
+to_copilot.txt
